@@ -1,7 +1,0 @@
-1.Install Jenkins using docker image
-a)Push Docker File into Gitohub 
-b)Create Instace 
-Enable Firewall Anywhere becuase myIp Always change
-c)
-a)Create Docker image
-
