@@ -1,0 +1,33 @@
+---
+# tasks file for python_selenimum
+- name: Update system
+  shell: yum update
+- name: Install Prerequisites
+  shell: yum install gcc openssl-devel bzip2-devel libffi-devel
+
+- name: Change Directory
+  shell: cd /opt
+
+- name: Download python3
+  shell: wget https://www.python.org/ftp/python/3.7.9/Python-3.7.9.tgz
+
+- name: Extract Tar file
+  shell: tar xzf Python-3.7.9.tgz
+
+- name: Install Python 3.7
+  shell: cd Python-3.7.9
+
+- name: Enable Configration
+  shell: ./configure --enable-optimizations
+
+- name: Make altinstall use
+  shell: make altinstall 
+
+- name: Check Version
+  shell: python3.7 -V
+
+- name: Remove downloaded source archive file from system
+  shell: rm /usr/src/Python-3.7.9.tgz
+
+- name: Check SELinux status
+  shell: sestatus
